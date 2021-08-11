@@ -6,6 +6,7 @@ globalVariables(
     'name',
     'value',
     'polarity',
+    'id',
     'chromatogramId',
     'chromatogramIndex',
     'cvRef',
