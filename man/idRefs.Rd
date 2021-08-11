@@ -7,13 +7,13 @@
 idRefs(xmlDoc)
 }
 \arguments{
-\item{xmlDoc}{a `xml` document}
+\item{xmlDoc}{a \code{xml} document}
 }
 \value{
-a character vector of all available `idRefs`
+a character vector of all available \code{idRefs}
 }
 \description{
-Extract all the `idRefs` in the specified `mzML` file. The `idRefs` will correspond to the individual scan events.
+Extract all the \code{idRefs} in the specified \code{mzML} file. The \code{idRefs} will correspond to the individual scan events.
 }
 \examples{
 \dontrun{

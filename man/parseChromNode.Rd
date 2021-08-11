@@ -7,18 +7,24 @@
 parseChromNode(x, mode)
 }
 \arguments{
-\item{x}{a `xml2` nodeset for a `Chromatogram` block}
+\item{x}{a \code{xml2} nodeset for a \code{Chromatogram} block}
 
-\item{mode}{a character of either `SRM` or `TIC`}
+\item{mode}{a character of either \code{SRM} or \code{TIC}}
 }
 \value{
 a list of two elements
- * **time**
-   * `attributes`
-   * `raw`
- * **intensity**
-   * `attributes`
-   * `raw`
+\itemize{
+\item \strong{time}
+\itemize{
+\item \code{attributes}
+\item \code{raw}
+}
+\item \strong{intensity}
+\itemize{
+\item \code{attributes}
+\item \code{raw}
+}
+}
 }
 \description{
 Parse the XML nodeset of a SRM chromatogram

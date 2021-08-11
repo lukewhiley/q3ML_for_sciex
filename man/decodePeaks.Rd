@@ -7,7 +7,7 @@
 decodePeaks(x, compression = "none", size)
 }
 \arguments{
-\item{x}{a `base64` encoded vector}
+\item{x}{a \code{base64} encoded vector}
 
 \item{compression}{compression type (default = "none")}
 
@@ -17,5 +17,5 @@ decodePeaks(x, compression = "none", size)
 a numeric vector
 }
 \description{
-Decode a `binaryDataArray` into a vector of either time or intensity
+Decode a \code{binaryDataArray} into a vector of either time or intensity
 }

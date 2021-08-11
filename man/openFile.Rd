@@ -7,11 +7,11 @@
 openFile(mzml_file)
 }
 \arguments{
-\item{mzml_file}{the absolute file path of a valid `.mzML` file}
+\item{mzml_file}{the absolute file path of a valid \code{.mzML} file}
 }
 \value{
-a list of two elements containing `peaks` and `header`
+a list of two elements containing \code{peaks} and \code{header}
 }
 \description{
-Open and parse a .mzML file containing Selective Reaction Monitoring (SRM) Mass Spectrometry (MS) data using `xml2`
+Open and parse a .mzML file containing Selective Reaction Monitoring (SRM) Mass Spectrometry (MS) data using \code{xml2}
 }
