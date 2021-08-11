@@ -1,0 +1,20 @@
+globalVariables(
+  c(
+    '.',
+    'cvRef',
+    'accession',
+    'name',
+    'value',
+    'polarity',
+    'chromatogramId',
+    'chromatogramIndex',
+    'cvRef',
+    'precursorCollisionEnergy',
+    'precursorIsolationWindowLowerOffset',
+    'precursorIsolationWindowTargetMZ',
+    'precursorIsolationWindowUpperOffset',
+    'productIsolationWindowLowerOffset',
+    'productIsolationWindowTargetMZ',
+    'productIsolationWindowUpperOffset'
+  )
+)
