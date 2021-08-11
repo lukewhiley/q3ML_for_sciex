@@ -21,6 +21,8 @@ Imports:
   base64enc,
   crayon,
   cli
+Suggest:
+  mzR
 RoxygenNote: 7.1.1
 Suggests: 
     covr,
