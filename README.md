@@ -44,7 +44,8 @@ For .mzML files which have been created using msconvert pwiz Version > 3.0.2 the
 ```R
 Pwiz_V3_02 <- mzR::openMSfile(mzml_files[2])
 
-Error: Can not open file /home/R/x86_64-pc-linux-gnu-library/4.1/q3ML/extdata/QC01_pwiz3_0_2.mzML! Original error was: Error in pwizModule$open(filename): [IO::HandlerBinaryDataArray] Unknown binary data type.
+Error: Can not open file /home/R/x86_64-pc-linux-gnu-library/4.1/q3ML/extdata/QC01_pwiz3_0_2.mzML! 
+Original error was: Error in pwizModule$open(filename): [IO::HandlerBinaryDataArray] Unknown binary data type.
 
 Pwiz_V3_02 <- openFile(mzml_files[2])
 
