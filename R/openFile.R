@@ -14,7 +14,7 @@ openFile <- function(mzml_file)
 
   pwiz_version <-
     xml_tmp %>% xml2::xml_find_all(., "//d1:software") %>% xml2::xml_attrs() %>%
-    dplyr::bind_rows() %>% dplyr::filter(id == 'pwiz') %>%
+    dplyr::bind_rows() %>% dplyr::filter(stringr::str_detect(id, 'pwiz')) %>%
     dplyr::select(version) %>% dplyr::pull() %>%
     stringr::str_split(., '\\.')
 
@@ -130,11 +130,21 @@ openFile <- function(mzml_file)
 
 
   PrecursorHeader <- Precursor %>% dplyr::bind_rows() %>%
-    dplyr::rename(
-      precursorIsolationWindowTargetMZ = 'isolation window target m/z',
-      precursorCollisionEnergy = 'collision energy'
-    ) %>%
-    dplyr::mutate_if(is.character, as.numeric)
+    dplyr::rename(precursorIsolationWindowTargetMZ = 'isolation window target m/z')
+
+
+  if ('collision energy' %in% names(PrecursorHeader)) {
+    PrecursorHeader <-
+      PrecursorHeader %>% dplyr::rename(precursorCollisionEnergy = 'collision energy')
+  } else{
+    PrecursorHeader <-
+      PrecursorHeader %>% dplyr::mutate(precursorCollisionEnergy = NA)
+  }
+
+
+  PrecursorHeader <-
+    PrecursorHeader %>% dplyr::mutate_if(is.character, as.numeric)
+
 
   PrecursorHeader$precursorIsolationWindowTargetMZ <-
     round(PrecursorHeader$precursorIsolationWindowTargetMZ,
@@ -144,10 +154,31 @@ openFile <- function(mzml_file)
   ProductHeader <- Product %>% dplyr::bind_rows() %>%
     dplyr::rename(
       productIsolationWindowTargetMZ = 'isolation window target m/z',
-      productIsolationWindowLowerOffset = 'isolation window lower offset',
-      productIsolationWindowUpperOffset = 'isolation window upper offset'
-    ) %>%
-    dplyr::mutate_if(is.character, as.numeric)
+    )
+
+
+
+  if ('isolation window lower offset' %in% names(ProductHeader)) {
+    ProductHeader <-
+      ProductHeader %>% dplyr::rename(productIsolationWindowLowerOffset = 'isolation window lower offset')
+  } else{
+    ProductHeader <-
+      ProductHeader %>% dplyr::mutate(productIsolationWindowLowerOffset = NA)
+  }
+
+
+  if ('isolation window upper offset' %in% names(ProductHeader)) {
+    ProductHeader <-
+      ProductHeader %>% dplyr::rename(productIsolationWindowUpperOffset = 'isolation window upper offset')
+  } else{
+    ProductHeader <-
+      ProductHeader %>% dplyr::mutate(productIsolationWindowUpperOffset = NA)
+  }
+
+
+  ProductHeader <-
+    ProductHeader %>% dplyr::mutate_if(is.character, as.numeric)
+
 
   ProductHeader$productIsolationWindowTargetMZ <-
     round(ProductHeader$productIsolationWindowTargetMZ,
@@ -194,7 +225,5 @@ openFile <- function(mzml_file)
 
 
   return(list(peaks = peaks, header = data.frame(file_header)))
-
-
 
 }
