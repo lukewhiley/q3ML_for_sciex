@@ -2,6 +2,7 @@
 
 * Add `detectInstrumentModel` function
 * Test with Water's MassLynx mzML files and adjust `openFile` function accordingly
+* Remove `mzR` as Suggests
 
 # q3ML v0.1.0
 
