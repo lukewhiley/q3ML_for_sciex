@@ -1,3 +1,8 @@
+# q3ML v0.1.1
+
+* Add `detectInstrumentModel` function
+* Test with Water's MassLynx mzML files and adjust `openFile` function accordingly
+
 # q3ML v0.1.0
 
 * Parse Selective Reaction Monitoring (SRM) Mass Spectrometry (MS) mzML files from Thermo Scientific
