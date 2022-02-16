@@ -1,11 +1,10 @@
 Package: q3ML
 Type: Package
-Title: Open and Parse SRM mzML files from Thermo Triple Quadruploe Mass Spectrometers
-Version: 0.1.0
+Title: Open and Parse MR-MS mzML files
+Version: 0.1.1
 Authors@R: c(
     person("Tom", "Wilson", , "tpw2@aber.ac.uk", c("aut", "cre")))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Parse .mzML files of Multiple Reaction Monitoring (MRM) Mass Spectrometry (MS) data using xml2.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -20,7 +19,8 @@ Imports:
   stringr,
   base64enc,
   crayon,
-  cli
+  cli,
+  httr
 RoxygenNote: 7.1.1
 Suggests: 
     covr,
