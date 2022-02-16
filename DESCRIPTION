@@ -1,6 +1,6 @@
 Package: q3ML
 Type: Package
-Title: Open and Parse MR-MS mzML files
+Title: Open and Parse MRM-MS mzML Files
 Version: 0.1.1
 Authors@R: c(
     person("Tom", "Wilson", , "tpw2@aber.ac.uk", c("aut", "cre")))
@@ -19,8 +19,7 @@ Imports:
   stringr,
   base64enc,
   crayon,
-  cli,
-  httr
+  cli
 RoxygenNote: 7.1.1
 Suggests: 
     covr,
