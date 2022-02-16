@@ -5,9 +5,6 @@ test_that('file versions', {
   testfiles <-
     list.files(system.file('extdata', package = 'q3ML'), pattern = '.mzML', full.names = TRUE)
 
-  expect_true(class(mzR::openMSfile(testfiles[1])) == 'mzRpwiz')
-  expect_error(mzR::openMSfile(testfiles[2]))
-
   expect_null(openFile(testfiles[1]))
   expect_true(is.list(openFile(testfiles[2])))
 
