@@ -21,4 +21,4 @@ test_that('file versions', {
   expect_identical(mzR_pwiz3_1_hd, q3ML_pwiz3_2$header)
 
 
-  })
+})
