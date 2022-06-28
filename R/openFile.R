@@ -116,7 +116,8 @@ openFile <- function(mzml_file)
       from = 1,
       to = length(id_refs),
       by = 1
-    )) %>% dplyr::filter(id_refs != 'TIC')
+    )) %>% dplyr::filter(id_refs != 'TIC' & id_refs != 'BPC')
+    #)) %>% dplyr::filter(id_refs != 'TIC') #orig
 
   for (i in seq_along(srm_id$id)) {
     Precursor[[i]] <-

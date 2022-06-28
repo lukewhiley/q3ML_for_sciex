@@ -18,10 +18,19 @@ parseChromNode <- function(x, mode)
     polarity <- -1
   }
 
-  if (mode == 'SRM') {
-    binaryDataArray <- xml2::xml_children(x[[5]])
 
-    plong <- xml2::xml_attrs(x[[2]])[['name']]
+
+  if (mode == 'SRM') {
+    if(xml2::xml_attrs(x[[1]])[['name']] == "basepeak chromatogram"){
+      binaryDataArray <- xml2::xml_children(x[[2]])
+      polarity <- -1
+    } else {
+
+      #binaryDataArray <- xml2::xml_children(x[[5]]) #orig
+      binaryDataArray <- xml2::xml_children(x[[6]])
+
+      #plong <- xml2::xml_attrs(x[[2]])[['name']] #orig
+      plong <- xml2::xml_attrs(x[[2]])[['name']]
 
     if (plong == 'positive scan') {
       polarity <- 1
@@ -29,8 +38,8 @@ parseChromNode <- function(x, mode)
 
     if (plong == 'negative scan') {
       polarity <- 0
-    }
-
+      }
+      }
   }
 
 
